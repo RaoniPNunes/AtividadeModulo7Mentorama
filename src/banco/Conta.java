@@ -3,10 +3,10 @@ package banco;
 
 
 public abstract class Conta {
-    String nome;
-    int agencia;
-    int conta;
-    double saldo;
+    protected String nome;
+    protected int agencia;
+    protected int conta;
+    protected double saldo;
 
     public Conta(String nome, int agencia, int conta) {
         this.nome = nome;
@@ -38,10 +38,9 @@ public abstract class Conta {
         this.conta = conta;
     }
     
-    public double getSaldo(){
-        return saldo;
-    }
-    
+    public abstract double getSaldo();
+        
+       
     public void setSaldo(double saldo){
         this.saldo = saldo;
     }

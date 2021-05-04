@@ -1,15 +1,22 @@
 
 package banco;
 
+import java.util.Date;
+
 
 public class ContaPoupanca extends Conta{
     
     public double taxadejuros;
+    public int dataAniversario;
+    public int data;
 
-    public ContaPoupanca(String nome, int agencia, int conta) {
+    public ContaPoupanca(int dataAniversario, String nome, int agencia, int conta) {
         super(nome, agencia, conta);
         this.taxadejuros = 0.05;
+        this.dataAniversario = dataAniversario;
     }
+
+    
 
     public double getTaxadejuros() {
         return taxadejuros;
@@ -47,18 +54,18 @@ public class ContaPoupanca extends Conta{
     @Override
     public void setConta(int conta) {
         this.conta = conta;
-    }
+    }     
 
     @Override
     public double getSaldo() {
-        return this.saldo = saldo + saldo*getTaxadejuros();
-    }
-
-    @Override
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
     
+        if(this.data >= this.dataAniversario ){
+           saldo += this.saldo*this.taxadejuros;
+       }
+       else{
+           saldo = this.saldo; 
+       }
+       return saldo;    }
         
     
 }

@@ -53,7 +53,9 @@ public class Banco {
             int agencia1 = teclado.nextInt();
             System.out.println("Informe a conta do cliente");
             int conta1 = teclado.nextInt();
-            lista.add(new ContaPoupanca(name1, agencia1, conta1));
+            System.out.println("Informe a data de aniversário do cliente");
+            int dataAniversario = teclado.nextInt();
+            lista.add(new ContaPoupanca(dataAniversario, name1, agencia1, conta1));
         }
     }
     // Saque
